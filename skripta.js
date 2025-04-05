@@ -400,7 +400,19 @@ function handleWrongAnswer() {
     const lastSafeHaven = SAFE_HAVENS.filter(level => level < gameState.currentLevel).pop();
     gameState.moneyWon = lastSafeHaven ? PRIZE_MONEY[lastSafeHaven] : 0;
     
-    setTimeout(() => endGame(false), 2000);
+    // Determine which page to redirect to based on prize amount
+    let redirectPage = 'luzer.html';
+    if (gameState.moneyWon === 1000) {
+        redirectPage = 'petica.html';
+    } else if (gameState.moneyWon === 32000) {
+        redirectPage = 'cener.html';
+    }
+    
+    showEndGameMessage(`Igra je završena! Osvojili ste $${gameState.moneyWon}`);
+    
+    setTimeout(() => {
+        window.location.href = redirectPage;
+    }, 3000);
 }
 
 function showSafeHavenMessage() {
