@@ -1,0 +1,221 @@
+var razina1 = [
+    {
+        pitanje: "Koja je vrednost π (pi) ?",
+        odgovori: ["3.14", "2.71", "1.62", "4.20"],
+        tacanOdgovor: "3.14"
+    },
+    {
+        pitanje: "Kako se zove teorema koja se odnosi na trouglove i koja počinje sa :a^2 + b^2 = c^2?",
+        odgovori: ["Fermatova teorema", "Heronova teorema", "Euklidova teorema", "Pitagorina teorema"],
+        tacanOdgovor: "Pitagorina teorema"
+    },
+    {
+        pitanje: "Koji je korijen broja 64?",
+        odgovori: ["38 stepeni", "8", "64", "a+b=c"],
+        tacanOdgovor: "8"
+    },
+    {
+        pitanje: "Šta znači skraćenica HTML?",
+        odgovori: ["HyperTransfer Markup Language", "High-Level Text Management Language", "HyperText Markup Language", "Hyper znanje kodova"],
+        tacanOdgovor: "HyperText Markup Language"
+    },
+    {
+        pitanje: "Koje jezike koristimo za stilizaciju web stranica?",
+        odgovori: ["CSS (Cascading Style Sheets)", "HTML (HyperText Markup Language)", "Python", "C++"],
+        tacanOdgovor: "CSS (Cascading Style Sheets)"
+    },
+    {
+        pitanje: "Šta znači pojam 'bug' u programiranju?",
+        odgovori: ["Da sve radi perfektno", "Greška u kodu", "Buba na ekranu", "Mali insekt koji ometa rad računara"],
+        tacanOdgovor: "Greška u kodu"
+    },
+    {
+        pitanje: "Koliko stepeni ima jedan krug?",
+        odgovori: ["360", "90", "180", "69.01"],
+        tacanOdgovor: "360"
+    },
+    {
+        pitanje: "Ko je bio Albert Einstein?",
+        odgovori: ["Poznati njemački fizičar", "Predsjednik Albanije u toku Drugog Svjetskog rata", "Poznati poljski fudbaler", "Profesor na PMF-u"],
+        tacanOdgovor: "Poznati njemački fizičar"
+    }
+];
+
+var razina2 = [
+    {
+        pitanje: "Šta predstavlja akronim 'HTTP'?",
+        odgovori: ["HyperText Transfer Protocol", "High-Level Text Processing", "HyperTransfer Text Protocol", "HyperText Technical Process"],
+        tacanOdgovor: "HyperText Transfer Protocol"
+    },
+    {
+        pitanje: "Kako se naziva proces dodeljivanja imena varijablama u programiranju?",
+        odgovori: ["Definisanje", "Delegiranje", "Deklaracija", "Inicijalizacija"],
+        tacanOdgovor: "Deklaracija"
+    },
+    {
+        pitanje: "Šta je operator '==' u programskom jeziku JavaScript?",
+        odgovori: ["Operator jednakosti", "Operator identiteta", "Operator poređenja", "Operator dodjele"],
+        tacanOdgovor: "Operator poređenja"
+    },
+    {
+        pitanje: "Koliko bita čini jedan bajt?",
+        odgovori: ["4", "8", "16", "32"],
+        tacanOdgovor: "8"
+    },
+    {
+        pitanje: "Šta je petlja ('loop') u programiranju?",
+        odgovori: ["Vrsta podataka", "Sintaksna greška", "Struktura za kontrolu toka programa", "Funkcija za unos podataka"],
+        tacanOdgovor: "Struktura za kontrolu toka programa"
+    },
+    {
+        pitanje: "Kako se nazivaju osnovne aritmetičke operacije (sabiranje, oduzimanje, množenje, deljenje)?",
+        odgovori: ["Trigonometrijske funkcije", "Geometrijske operacije", "Algebarske operacije", "Logičke operacije"],
+        tacanOdgovor: "Algebarske operacije"
+    },
+    {
+        pitanje: "Šta predstavlja pojam 'boolean' u programiranju?",
+        odgovori: ["Vrsta podataka koja ima samo dva moguća stanja: tačno ili netačno", "Specifična vrsta greške", "Skup instrukcija za rad sa tekstualnim podacima", "Programski jezik"],
+        tacanOdgovor: "Vrsta podataka koja ima samo dva moguća stanja: tačno ili netačno"
+    },
+    {
+        pitanje: "Šta su nizovi (arrays) u programiranju?",
+        odgovori: ["Skup instrukcija za rad sa matricama", "Struktura podataka koja čuva više vrednosti pod jednim imenom", "Vrsta greške u programiranju", "Operator za unos podataka"],
+        tacanOdgovor: "Struktura podataka koja čuva više vrednosti pod jednim imenom"
+    }
+];
+var razina3 = [
+    {
+        pitanje: "Ko je autor JavaScript jezika?",
+        odgovori: ["Brendan Eich", "Mark Zuckerberg", "Bill Gates", "Larry Page"],
+        tacanOdgovor: "Brendan Eich"
+    },
+    {
+        pitanje: "Šta predstavlja skraćenica 'API'?",
+        odgovori: ["Application Programming Interface", "Advanced Programming Interface", "Automated Programming Interface", "Application Processing Interface"],
+        tacanOdgovor: "Application Programming Interface"
+    },
+    {
+        pitanje: "Koji HTTP status kod označava 'Not Found' grešku?",
+        odgovori: ["200", "404", "500", "302"],
+        tacanOdgovor: "404"
+    },
+    {
+        pitanje: "Šta znači akronim 'SQL'?",
+        odgovori: ["Structured Language", "Simple Question Language", "Standard Query Language", "System Query Language"],
+        tacanOdgovor: "Standard Query Language"
+    },
+    {
+        pitanje: "Koja od navedenih nije JavaScript biblioteka/framework?",
+        odgovori: ["React", "Angular", "Word", "JavaFX"],
+        tacanOdgovor: "JavaFX"
+    },
+    {
+        pitanje: "Koja od naredbi se koristi za kreiranje nove grane u Git-u?",
+        odgovori: ["git branch", "git commit", "git merge", "git clone"],
+        tacanOdgovor: "git branch"
+    },
+    {
+        pitanje: "Koja od naredbi se koristi za instalaciju paketa u Node.js okruženju?",
+        odgovori: ["npm install", "node install", "package install", "install npm"],
+        tacanOdgovor: "npm install"
+    },
+    {
+        pitanje: "Koje od navedenih nije programski jezik?",
+        odgovori: ["Java", "MySQL", "Python", "Ruby"],
+        tacanOdgovor: "MySQL"
+    }
+];
+
+var generisanaPitanja = [];
+    var trenutnaRazina = razina1; // Početno postavljanje na razina1
+    var brojacTacnihOdgovora = 0; // Dodajemo brojač ovde
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("pitanje1").addEventListener("click", provjeri);
+        document.getElementById("pitanje2").addEventListener("click", provjeri);
+        document.getElementById("pitanje3").addEventListener("click", provjeri);
+        document.getElementById("pitanje4").addEventListener("click", provjeri);
+
+        function provjeri(event) {
+            var generisi = document.getElementById("ovdepitanje").innerText;
+            var odabraniOdgovor = event.target.innerText;
+            var tacanOdgovor;
+
+            // Postavljamo tačne odgovore za svako pitanje
+            switch (generisi) {
+                case razina1[0].pitanje:
+                case razina1[1].pitanje:
+                case razina1[2].pitanje:
+                case razina1[3].pitanje:
+                case razina1[4].pitanje:
+                case razina1[5].pitanje:
+                case razina1[6].pitanje:
+                case razina1[7].pitanje:
+                    tacanOdgovor = razina1.find((p) => p.pitanje === generisi).tacanOdgovor;
+                    break;
+
+                case razina2[0].pitanje:
+                case razina2[1].pitanje:
+                case razina2[2].pitanje:
+                case razina2[3].pitanje:
+                case razina2[4].pitanje:
+                case razina2[5].pitanje:
+                case razina2[6].pitanje:
+                case razina2[7].pitanje:
+                    tacanOdgovor = razina2.find((p) => p.pitanje === generisi).tacanOdgovor;
+                    break;
+            }
+
+            if (odabraniOdgovor === tacanOdgovor) {
+                brojacTacnihOdgovora++;
+
+                if (brojacTacnihOdgovora === 5) {
+                    alert("Svi odgovori su tačni! Prelazimo na razinu 2.");
+                    trenutnaRazina = razina2; // Postavi trenutnu razinu na razina2
+                    generisanaPitanja = []; // Resetuj listu postavljenih pitanja
+                    brojacTacnihOdgovora = 0;
+                    postaviSljedecePitanje(); // Automatski postavi pitanje iz razine2
+                } else {
+                    postaviSljedecePitanje();
+                }
+            } else {
+                alert("Odgovor nije tačan. Kviz se završava.");
+            }
+        }
+
+        function postaviSljedecePitanje() {
+            if (generisanaPitanja.length === trenutnaRazina.length) {
+                alert("Kviz iz ove razine je završen!");
+            } else {
+                randomskroz(trenutnaRazina);
+            }
+        }
+
+        function randomskroz(razina) {
+            var generisi;
+
+            // Proveri da li su sva pitanja postavljena
+            if (generisanaPitanja.length === razina.length) {
+                alert("Kviz iz ove razine je završen!");
+                return;
+            }
+
+            // Generiši nasumično pitanje koje još nije postavljeno
+            do {
+                generisi = razina[Math.floor(Math.random() * razina.length)];
+            } while (generisanaPitanja.includes(generisi.pitanje));
+
+            // Dodaj pitanje u listu postavljenih pitanja
+            generisanaPitanja.push(generisi.pitanje);
+
+            document.getElementById("ovdepitanje").innerText = generisi.pitanje;
+
+            // Postavi odgovore za novo pitanje
+            document.getElementById("pitanje1").innerHTML = generisi.odgovori[0];
+            document.getElementById("pitanje2").innerHTML = generisi.odgovori[1];
+            document.getElementById("pitanje3").innerHTML = generisi.odgovori[2];
+            document.getElementById("pitanje4").innerHTML = generisi.odgovori[3];
+        }
+
+        randomskroz(trenutnaRazina); // Početno postavljanje pitanja iz trenutne razine
+    });

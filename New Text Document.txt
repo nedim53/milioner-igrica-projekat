@@ -1,0 +1,147 @@
+var razina1 = [
+    "Koja je vrednost π (pi) ?",
+   "Kako se zove teorema koja se odnosi na trouglove i koja počinje sa :a^2 + b^2 = c^2?"
+    ,"Koji je korijen broja 64?",
+    "Šta znači skraćenica HTML?",
+    "Koje jezike koristimo za stilizaciju web stranica?",
+    "Šta znači pojam :bug u programiranju?",
+    "Koliko stepeni ima jedan krug?",
+    "Ko je bio Albert Einstain?"
+];
+
+var razina2 = [
+    "Šta predstavlja akronim 'HTTP'?",
+    "Kako se naziva proces dodeljivanja imena varijablama u programiranju?",
+    "Šta je operator '== 'u programskom jeziku JavaScript?",
+    "Koliko bita čini jedan bajt?",
+    "Šta je petlja ('loop') u programiranju?",
+    "Kako se nazivaju osnovne aritmetičke operacije (sabiranje, oduzimanje, množenje, deljenje)?",
+    "Šta predstavlja pojam 'boolean' u programiranju?",
+    "Šta su nizovi (arrays) u programiranju?"
+];
+
+var generisanaPitanja = [];
+var brojac = 0
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("pitanje1").addEventListener("click", provjeri);
+    document.getElementById("pitanje2").addEventListener("click", provjeri);
+    document.getElementById("pitanje3").addEventListener("click", provjeri);
+    document.getElementById("pitanje4").addEventListener("click", provjeri);
+
+    function provjeri(event) {
+        var generisi = document.getElementById("ovdepitanje").innerText;
+        var odabraniOdgovor = event.target.innerText;
+        var tacanOdgovor;
+
+        // Postavljamo tačne odgovore za svako pitanje
+        switch (generisi) {
+            case razina1[0]:
+                tacanOdgovor = "3.14";
+                break;
+            case razina1[1]:
+                tacanOdgovor = "Pitagorina teorema";
+                break;
+            case razina1[2]:
+                tacanOdgovor = "8";
+                break;
+            case razina1[3]:
+                tacanOdgovor = "HyperText Markup Language";
+                break;
+            case razina1[4]:
+                tacanOdgovor = "CSS (Cascading Style Sheets)";
+                break;
+            case razina1[5]:
+                tacanOdgovor = "Greška u kodu";
+                break;
+            case razina1[6]:
+                tacanOdgovor = "360";
+                break;
+            case razina1[7]:
+                tacanOdgovor = "Poznati njemački fizičar";
+                break;
+        }
+
+        if (odabraniOdgovor === tacanOdgovor) {
+            postaviSljedecePitanje();
+            brojac = brojac+1
+            console.log(brojac)
+            
+        }
+    }
+
+    function postaviSljedecePitanje() {
+        if (generisanaPitanja.length === razina1.length) {
+            alert("Kviz je završen!");
+        } else {
+            randomskroz();
+        }
+    }
+
+    function randomskroz() {
+        var generisi;
+
+        // Generiši nasumično pitanje koje još nije postavljeno
+        do {
+            generisi = razina1[Math.floor(Math.random() * razina1.length)];
+        } while (generisanaPitanja.indexOf(generisi) !== -1);
+
+        // Dodaj pitanje u listu postavljenih pitanja
+        generisanaPitanja.push(generisi);
+
+        document.getElementById("ovdepitanje").innerText = generisi;
+        document.getElementById("generisi").style.visibility = "hidden";
+
+        switch (generisi) {
+            case razina1[0]:
+                document.getElementById("pitanje1").innerHTML = "3.14";
+                document.getElementById("pitanje2").innerHTML = "6.98";
+                document.getElementById("pitanje3").innerHTML = "1.21";
+                document.getElementById("pitanje4").innerHTML = "burek";
+                break;
+            case razina1[1]:
+                document.getElementById("pitanje1").innerHTML = "Fermatova teorema";
+                document.getElementById("pitanje2").innerHTML = "Heronova teorema";
+                document.getElementById("pitanje3").innerHTML = "Euklidova teorema";
+                document.getElementById("pitanje4").innerHTML = "Pitagorina teorema";
+                break;
+            case razina1[2]:
+                document.getElementById("pitanje1").innerHTML = "38 stepeni";
+                document.getElementById("pitanje2").innerHTML = "8";
+                document.getElementById("pitanje3").innerHTML = "64";
+                document.getElementById("pitanje4").innerHTML = "a+b=c";
+                break;
+            case razina1[3]:
+                document.getElementById("pitanje1").innerHTML = "HyperTransfer Markup Language";
+                document.getElementById("pitanje2").innerHTML = "High-Level Text Management Language";
+                document.getElementById("pitanje3").innerHTML = "HyperText Markup Language";
+                document.getElementById("pitanje4").innerHTML = "Hyper znanje kodova";
+                break;
+            case razina1[4]:
+                document.getElementById("pitanje1").innerHTML = "CSS (Cascading Style Sheets)";
+                document.getElementById("pitanje2").innerHTML = "HTML (HyperText Markup Language)";
+                document.getElementById("pitanje3").innerHTML = "Python";
+                document.getElementById("pitanje4").innerHTML = "C++";
+                break;
+            case razina1[5]:
+                document.getElementById("pitanje1").innerHTML = "Da sve radi perfektno";
+                document.getElementById("pitanje2").innerHTML = "Greška u kodu";
+                document.getElementById("pitanje3").innerHTML = "Buba na ekranu";
+                document.getElementById("pitanje4").innerHTML = "Mali insekt koji ometa rad računara";
+                break;
+            case razina1[6]:
+                document.getElementById("pitanje1").innerHTML = "360";
+                document.getElementById("pitanje2").innerHTML = "90";
+                document.getElementById("pitanje3").innerHTML = "180";
+                document.getElementById("pitanje4").innerHTML = "69.01";
+                break;
+            case razina1[7]:
+                document.getElementById("pitanje1").innerHTML = "Poznati njemački fizičar";
+                document.getElementById("pitanje2").innerHTML = "Predsjednik Albanije u toku Drugog Svjetskog rata";
+                document.getElementById("pitanje3").innerHTML = "Poznati poljski fudbaler";
+                document.getElementById("pitanje4").innerHTML = "Profesor na PMF-u";
+                break;
+        }
+    }
+
+    randomskroz();
+});

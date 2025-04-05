@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="m.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Milioner Quiz Game - Test your knowledge and win big!">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="milioner.css">
+    <title>Milioner Quiz</title>
+</head>
+<body>
+    <audio id="tzvuk" src="tacno.mp3"></audio>
+    <audio id="pzvuk" src="pogresno.mp3"></audio>
+    <audio id="pobjeda" src="pobjeda.mp3"></audio>
+    <audio id="poraz" src="poraz.mp3"></audio>
+    <script src="skripta.js"></script>
+
+    <header class="game-header">
+        <nav class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-3">
+                    <button class="btn-back">
+                        <a href="pocetak.html"><i class="fas fa-arrow-left"></i> Nazad na početnu</a>
+                    </button>
+                </div>
+                <div class="col-12 col-md-9">
+                    <ul class="player-info">
+                        <li><i class="fas fa-user"></i> Igrač: <span id="prikazImenaPrezimena">Ime i prezime</span></li>
+                        <li><i class="fas fa-coins"></i> Stanje: <span id="kolikopara">0</span></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="game-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="game-content">
+                        <button class="btn-start" id="generisi" onclick="startGame()">
+                            <i class="fas fa-play"></i> Start
+                        </button>
+                        <div class="question-container">
+                            <div class="current-question">
+                                <button id="ovdepitanje" class="question-text"></button>
+                            </div>
+                            <div class="answers-grid">
+                                <button class="answer-btn" id="pitanje1">1.</button>
+                                <button class="answer-btn" id="pitanje2">2.</button>
+                                <button class="answer-btn" id="pitanje3">3.</button>
+                                <button class="answer-btn" id="pitanje4">4.</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="prize-ladder">
+                        <ul class="prize-list">
+                            <li class="prize-item safe" id="15">15- $1 000 000</li>
+                            <li class="prize-item" id="14">14- $500 000</li>
+                            <li class="prize-item" id="13">13- $250 000</li>
+                            <li class="prize-item" id="12">12- $125 000</li>
+                            <li class="prize-item" id="11">11- $64 000</li>
+                            <li class="prize-item safe" id="10">10- $32 000</li>
+                            <li class="prize-item" id="9">9-  $16 000</li>
+                            <li class="prize-item" id="8">8-  $8000</li>
+                            <li class="prize-item" id="7">7-  $4000</li>
+                            <li class="prize-item" id="6">6-  $2000</li>
+                            <li class="prize-item safe" id="5">5-  $1000</li>
+                            <li class="prize-item" id="4">4-  $500</li>
+                            <li class="prize-item" id="3">3-  $300</li>
+                            <li class="prize-item" id="2">2-  $200</li>
+                            <li class="prize-item" id="1">1-  $100</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        var sacuvanoImePrezime = localStorage.getItem('imePrezime');
+        document.getElementById('prikazImenaPrezimena').innerText = sacuvanoImePrezime;
+        localStorage.removeItem('imePrezime');
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+body{
+    background-color: navy;
+        background-image: url("3.jpg.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        width: 100%;
+        height: 100vh;}
+
+        @media screen and (min-width:1024px){
+            .upute{
+                border: lightblue 3px solid;
+                    font-size: 20px;
+                    color: white;
+                    background-color: rgba(0,0,128,0.5);
+                    margin-top: 100px;
+                    padding: 25px;
+                }
+                .dugme a{
+                    background: rgb(2,0,36);
+                    background: linear-gradient(186deg, rgba(2,0,36,1) 0%, rgba(186,9,250,1) 0%, rgba(0,212,255,1) 100%);
+                    text-decoration: none;
+                    color: white;
+                    font-size: 20px;
+                    padding: 5px;
+                }
+                .dugme{background: rgb(2,0,36);
+                    background: linear-gradient(186deg, rgba(2,0,36,1) 0%, rgba(186,9,250,1) 0%, rgba(0,212,255,1) 100%);
+                    text-decoration: none;
+                    color: white;
+                    font-size: 20px;
+                    padding: 5px;}
+        }
+        @media screen and (min-width:767px) and (max-width:1023px){
+            .upute{
+                border: lightblue 3px solid;
+                    font-size: 20px;
+                    color: white;
+                    background-color: rgba(0,0,128,0.5);
+                    margin-top: 100px;
+                    padding: 20px;
+                }
+                .dugme a{
+                    background: rgb(2,0,36);
+                    background: linear-gradient(186deg, rgba(2,0,36,1) 0%, rgba(186,9,250,1) 0%, rgba(0,212,255,1) 100%);
+                    text-decoration: none;
+                    color: white;
+                    font-size: 15px;
+                    padding: 5px;
+                }
+                .dugme{
+                    background: rgb(2,0,36);
+                    background: linear-gradient(186deg, rgba(2,0,36,1) 0%, rgba(186,9,250,1) 0%, rgba(0,212,255,1) 100%);
+                    text-decoration: none;
+                     color: white;
+                    font-size: 15px;
+                    padding: 5px;
+                }
+        }
+        @media screen and (max-width:767px){
+            .upute{
+                border: lightblue 3px solid;
+                    font-size: 15px;
+                    color: white;
+                    background-color: rgba(0,0,128,0.5);
+                    margin-top: 100px;
+                    padding: 15px;
+                }
+                .dugme a{
+                    background: rgb(2,0,36);
+                    background: linear-gradient(186deg, rgba(2,0,36,1) 0%, rgba(186,9,250,1) 0%, rgba(0,212,255,1) 100%);
+                    text-decoration: none;
+                    color: white;
+                    font-size: 12px;
+                    padding: 3px;
+                }
+                .dugme{
+                    background: rgb(2,0,36);
+        background: linear-gradient(186deg, rgba(2,0,36,1) 0%, rgba(186,9,250,1) 0%, rgba(0,212,255,1) 100%);
+        text-decoration: none;
+        color: white;
+        font-size: 12px;
+        padding: 3px;
+                }
+        }
+
+

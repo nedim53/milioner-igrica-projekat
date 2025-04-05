@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="milioner.css">
+    <title>Milioner</title>
+    
+</head>
+<body>
+    <script src="skripta.js"></script>
+    <div class="container-fluid meni">
+        <ul class="lista">
+            <li><a href="">Počni novu igru</a></li>
+            <li>Uputstva</li>
+            <li>O projektu</li>
+        </ul>
+    </div>
+    <div class="container-fluid pocetna">
+        <div class="row">
+            <div class="col-1 rezultat"><p>rez</p></div>
+        <div class="col-7">
+            <button class="pocni" id="generisi" onclick="randomskroz()">Start</button>
+            <table class="pitanja">
+                <td colspan="4"><button id="ovdepitanje" class="rounded-pill"></button></td>
+                <tr>
+                  <th>Odgovor A</th>
+                  <th>Odgovor B</th>
+                  <th>Odgovor C</th>
+                  <th>Odgovor D</th>
+                </tr>
+                <tr>
+                  <td><button class="izbor rounded-3" id="pitanje1">1.</button></td>
+                  <td><button class="izbor rounded-3" id="pitanje2">2.</button></td>
+                  <td><button class="izbor rounded-3" id="pitanje3">3.</button></td>
+                  <td><button class="izbor rounded-3" id="pitanje4">4.</button></td>
+                </tr>
+              </table>
+            </div>
+
+      <!-- <h1>Milioner kviz</h1>--> 
+    <div class="col-4">
+        <ul class="pare">
+            <li class="sigurica" id="15">15- $1 000 000</li>
+            <li id="14">14- $500 000</li>
+            <li id="13">13- $250 000</li>
+            <li id="12">12- $125 000</li>
+            <li id="11">11- $64 000</li>
+            <li class="sigurica" id="10">10- $32 000</li>
+            <li id="9">9-  $16 000</li>
+            <li id="8">8-  $8000</li>
+            <li id="7">7-  $4000</li>
+            <li id="6">6-  $2000</li>
+            <li class="sigurica" id="5">5-  $1000</li>
+            <li id="4">4-  $500</li>
+            <li id="3">3-  $300</li>
+            <li id="2">2-  $200</li>
+            <li id="1">1-  $100</li>
+        </ul>
+    </div>
+</div>
+</div>
+
+
+    
+</body>
+</html>

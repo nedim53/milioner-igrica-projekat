@@ -1,0 +1,230 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #ecf0f1;
+    --background-color: #1a1a1a;
+    --gradient-start: #2c3e50;
+    --gradient-end: #3498db;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.game-header {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-back {
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: var(--text-color);
+    color: var(--primary-color);
+}
+
+.btn-back a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.player-info {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.player-info li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Game Container Styles */
+.game-container {
+    padding: 2rem 0;
+    min-height: calc(100vh - 80px);
+}
+
+.game-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.btn-start {
+    background: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+.question-container {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(44, 62, 80, 0.9);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.current-question {
+    margin-bottom: 2rem;
+}
+
+.question-text {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 1rem;
+    cursor: default;
+}
+
+.answers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.answer-btn {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+    transform: scale(1.02);
+    background: #2980b9;
+}
+
+/* Prize Ladder Styles */
+.prize-ladder {
+    background: rgba(44, 62, 80, 0.9);
+    border-radius: 15px;
+    padding: 1rem;
+    height: 100%;
+}
+
+.prize-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.prize-item {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.prize-item.safe {
+    background: var(--accent-color);
+    font-weight: bold;
+}
+
+.prize-item.active {
+    background: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .player-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .answers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .question-text {
+        font-size: 1.1rem;
+    }
+
+    .prize-ladder {
+        margin-top: 2rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-content {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+.correct {
+    background: #27ae60 !important;
+}
+
+.wrong {
+    background: #c0392b !important;
+}
+
+/* Audio Controls */
+audio {
+    display: none;
+}
