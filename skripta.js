@@ -418,14 +418,23 @@ function endGame(isVictory) {
     if (isVictory) {
         if (sounds.victory) sounds.victory.play();
         showEndGameMessage('Čestitamo! Osvojili ste $1,000,000!');
+        setTimeout(() => {
+            window.location.href = 'dobitnik.html';
+        }, 3000);
     } else {
         if (sounds.defeat) sounds.defeat.play();
         showEndGameMessage(`Igra je završena! Osvojili ste $${gameState.moneyWon}`);
+        setTimeout(() => {
+            // Redirect based on prize amount
+            if (gameState.moneyWon === 1000) {
+                window.location.href = 'petica.html';
+            } else if (gameState.moneyWon === 32000) {
+                window.location.href = 'cener.html';
+            } else {
+                window.location.href = 'luzer.html';
+            }
+        }, 3000);
     }
-    
-    setTimeout(() => {
-        window.location.href = 'dobitnik.html';
-    }, 3000);
 }
 
 function showEndGameMessage(message) {
