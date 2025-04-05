@@ -99,6 +99,7 @@ body {
     text-decoration: none;
     display: inline-block;
     text-align: center;
+    min-width: 200px;
 }
 
 .btn-start:hover, .btn-primary:hover {
@@ -236,7 +237,143 @@ body {
     animation: slideDown 0.3s ease-out;
 }
 
+/* Start Page Specific Styles */
+.start-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.start-content {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.start-title {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.start-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.start-form {
+    background: rgba(44, 62, 80, 0.9);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.start-form h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.start-form input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.start-form p {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* Result Pages Styles */
+.result-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.result-content {
+    background: rgba(44, 62, 80, 0.9);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-width: 800px;
+    width: 100%;
+}
+
+.result-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.result-message {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.result-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.result-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .start-content {
+        max-width: 900px;
+    }
+    
+    .start-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .start-content {
+        max-width: 700px;
+    }
+    
+    .start-title {
+        font-size: 3rem;
+    }
+    
+    .start-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .player-info {
         flex-direction: column;
@@ -263,6 +400,30 @@ body {
     .btn-start, .btn-primary {
         width: 100%;
         margin-bottom: 1rem;
+    }
+    
+    .start-title {
+        font-size: 2.5rem;
+    }
+    
+    .start-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .start-form {
+        padding: 1.5rem;
+    }
+    
+    .result-content {
+        padding: 2rem;
+    }
+    
+    .result-title {
+        font-size: 2rem;
+    }
+    
+    .result-message {
+        font-size: 1.2rem;
     }
 }
 
@@ -303,61 +464,4 @@ body {
 /* Audio Controls */
 audio {
     display: none;
-}
-
-/* Start Page Specific Styles */
-.start-container {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.start-content {
-    text-align: center;
-    max-width: 800px;
-    width: 100%;
-}
-
-.start-title {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: var(--text-color);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.start-buttons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.start-form {
-    background: rgba(44, 62, 80, 0.9);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.start-form h4 {
-    margin-bottom: 1rem;
-    color: var(--text-color);
-}
-
-.start-form input {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 2px solid var(--secondary-color);
-    border-radius: var(--border-radius);
-    background: transparent;
-    color: var(--text-color);
-}
-
-.start-form p {
-    font-size: 0.9rem;
-    color: var(--text-color);
-    opacity: 0.8;
 }
