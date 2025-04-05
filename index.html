@@ -1,62 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <link rel="icon" type="image/x-icon" href="m.jpg">
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="startaj.css">
-<title>Milioner</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Milioner Quiz - Test your knowledge and win big!">
+    <link rel="icon" type="image/x-icon" href="m.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="milioner.css">
+    <title>Milioner Quiz</title>
 </head>
 <body>
-   <div class="container">
-    <div class="row">
-        <div class="col-2">
+    <div class="start-container">
+        <div class="start-content">
+            <h1 class="start-title">Milioner Quiz</h1>
+            
+            <div class="start-buttons">
+                <a href="stranica.html" class="btn-primary">
+                    <i class="fas fa-play"></i> Počni novu igru
+                </a>
+                <a href="uputstva.html" class="btn-primary">
+                    <i class="fas fa-book"></i> Uputstva
+                </a>
+                <a href="oprojektu.html" class="btn-primary">
+                    <i class="fas fa-info-circle"></i> O projektu
+                </a>
+            </div>
 
-        </div>
-        <div class="col-8">
-            <form class="plej">
-                <div class="row">
-                <div class="col-5">
-                    <button class="pocetnodugme"><a href="stranica.html">Počni novu igru</a></button>
+            <div class="start-form">
+                <h4>Unesite vaše ime i prezime</h4>
+                <div class="form-group">
+                    <input type="text" id="imePrezimeInput" class="form-control" placeholder="Ime prezime">
                 </div>
-                <div class="col-3">
-                    <button class="pocetnodugme"><a href="uputstva.html" >Uputstva</a></button>
-                </div>
-                <div class="col-4">
-                    <button class="pocetnodugme"><a href="oprojektu.html">O projektu</a></button>
-                </div>
-             </div>
-             <br><br>
-             <div class="row">
-                <div class="col registar">
-                    <h4 id="upis">Upisite ime igraca:</h4>
-                    <input type="text" id="imePrezimeInput" placeholder="Ime prezime" itemid="plejsholder">
-                    <button id="suger" class="pocetnodugme" onclick="sacuvajImePrezime()">Sačuvaj</button>
-                    <br><br>
-                    <p style="color: white;">(Unesite ime i prezime nakon čega idete na opciju Sačuvaj, zatim započnite vašu igru.
-                        SRETNO!)
-                    </p>
-                </div>
-             </div>
-               
-               </div></form>
-        </div>
-        <div class="col-2">
-
+                <button id="suger" class="btn-primary" onclick="sacuvajImePrezime()">
+                    <i class="fas fa-save"></i> Sačuvaj
+                </button>
+                <p>Unesite ime i prezime nakon čega idete na opciju Sačuvaj, zatim započnite vašu igru. SRETNO!</p>
+            </div>
         </div>
     </div>
-</div>
-<script>
-    function sacuvajImePrezime() {
-            var imePrezime = document.getElementById('imePrezimeInput').value;
-            // postavljanje u Local Storage           https://www.w3schools.com/jsref/prop_win_localstorage.asp
-            localStorage.setItem('imePrezime', imePrezime);
 
-            // prenos na drugu stranicu
+    <script>
+        function sacuvajImePrezime() {
+            var imePrezime = document.getElementById('imePrezimeInput').value;
+            if (imePrezime.trim() === '') {
+                alert('Molimo unesite vaše ime i prezime!');
+                return;
+            }
+            localStorage.setItem('imePrezime', imePrezime);
             window.location.href = 'stranica.html';
         }
-</script>
+    </script>
 </body>
+</html>
